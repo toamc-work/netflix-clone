@@ -21,6 +21,12 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.css",  // Include CSS files if you have styles in separate files
+    "src/**/*.woff", // Include other font file extensions as needed
+    "src/**/*.woff2"
   ]
 }

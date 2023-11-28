@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { AbsoluteBox, FlexContainer } from '../../../mui/MuiStyledComponents';
 import { KeyboardArrowRight, KeyboardArrowLeft } from "@mui/icons-material";
 import _ from 'lodash'
+import { ArrowIcon } from "../../../mui/ArrowIcon";
 
 
 interface IImageSliderSmoothList {
@@ -50,10 +51,16 @@ const ImageSliderSmoothList: React.FC<IImageSliderSmoothList> = ({ chunks, rende
         }
 
         if (action === 'deacrese') {
-            if (Math.round(carousel.currentStep - 0.4) === 0) {
+            if (carousel.currentStep === 0) {
                 setCarousel({
                     status: 'ready',
                     currentStep: carouselMemoState.steps
+                })
+            }
+            else if (Math.round(carousel.currentStep - 0.5) === 0) {
+                setCarousel({
+                    status: 'ready',
+                    currentStep: carousel.currentStep -= carouselMemoState.steps % 1
                 })
             }
             else {

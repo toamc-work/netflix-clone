@@ -2,7 +2,8 @@ import { IAbsolute, IFlexBox, IFlexContainer, IGridBox, IPadBox } from "./types"
 import styled from "styled-components";
 import {
   Box,
-  Button
+  Button,
+  ButtonGroup
 } from '@mui/material';
 
 export const FlexBox = styled(Box) <IFlexBox>`
@@ -101,13 +102,13 @@ export const FlexContainer = styled(Box) <IFlexContainer>`
   border: ${({ showOutlines }) => showOutlines ? `1px solid #ff9900` : ''};
 `;
 
-export const AbsoluteBox = styled(Button) <IAbsolute>`
-  position: absolute;
+export const AbsoluteBox = styled(ButtonGroup)`
+    position: absolute;
     top: 0;
-    width: '5%';
-    height: '100%';
-    display: 'flex';
-    justify-content: 'center';
-    align-items: 'center';
-    font-size: '24px';
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
 `;

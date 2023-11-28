@@ -28,5 +28,5 @@ export interface IAbsolute {
 }
 
 export interface IArrowIcon {
-    direction: 'left' | 'right'
+    direction: 'left' | 'right' | 'up' | 'down'
 }

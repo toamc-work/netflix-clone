@@ -57,7 +57,7 @@ const NavigationMenu: React.FC<INavigationMenuProps> = ({ isDesktop, items }) =>
                     <FlexBox
                         position={'absolute'}
                         left={-114}
-                        top={65}
+                        top={58}
                         width={'20rem'}
                         height={'auto'}
                         showOutlines={true}

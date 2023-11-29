@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
 
         <FlexBox
             justifyContent={'center'}
-            alignItems={'center'}
+            alignItems={'start'}
             height={'100px'}
         >
             <FlexBox

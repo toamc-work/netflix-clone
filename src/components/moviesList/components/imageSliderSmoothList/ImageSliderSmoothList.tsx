@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { AbsoluteBox, FlexContainer } from '../../../mui/MuiStyledComponents';
 import { KeyboardArrowRight, KeyboardArrowLeft } from "@mui/icons-material";
 import _ from 'lodash'
+import { ArrowIcon } from "../../../mui/ArrowIcon";
 
 
 interface IImageSliderSmoothList {
@@ -50,10 +51,16 @@ const ImageSliderSmoothList: React.FC<IImageSliderSmoothList> = ({ chunks, rende
         }
 
         if (action === 'deacrese') {
-            if (Math.round(carousel.currentStep - 0.4) === 0) {
+            if (carousel.currentStep === 0) {
                 setCarousel({
                     status: 'ready',
                     currentStep: carouselMemoState.steps
+                })
+            }
+            else if (Math.round(carousel.currentStep - 0.5) === 0) {
+                setCarousel({
+                    status: 'ready',
+                    currentStep: carousel.currentStep -= carouselMemoState.steps % 1
                 })
             }
             else {
@@ -83,55 +90,23 @@ const ImageSliderSmoothList: React.FC<IImageSliderSmoothList> = ({ chunks, rende
             <AbsoluteBox
                 onClick={() => handleCaruselSteps('deacrese')}
                 sx={{
-                    position: 'absolute',
-                    top: 0,
                     left: 0,
                     width: '5%',
-                    height: '100%',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    fontSize: '24px',
                 }}
             >
-                <KeyboardArrowLeft sx={{
-                    fontSize: '150px',
-                    color: 'gray',
-                    transition: '0.1s ease',
-                    width: '100%',
-                    height: '100%',
-                    position: 'relative',
-                    '&:active, &:hover': {
-                        transform: `scale(1.3)`,
-
-                    },
-                }} /></AbsoluteBox>
+                <ArrowIcon direction={'left'} />
+            </AbsoluteBox>
             <AbsoluteBox
                 onClick={() => handleCaruselSteps('increase')}
                 sx={{
-                    position: 'absolute',
-                    top: 0,
+
                     right: 0,
                     width: '5%',
-                    height: '100%',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
                 }}
-
-            ><KeyboardArrowRight sx={{
-                fontSize: '150px',
-                color: 'gray',
-                transition: '0.1s ease',
-                width: '100%',
-                height: '100%',
-                position: 'relative',
-                '&:active, &:hover': {
-                    transform: `scale(1.3)`,
-                },
-
-            }} /></AbsoluteBox>
-        </FlexContainer>
+            >
+                <ArrowIcon direction={'right'} />
+            </AbsoluteBox>
+        </FlexContainer >
     )
 }
 

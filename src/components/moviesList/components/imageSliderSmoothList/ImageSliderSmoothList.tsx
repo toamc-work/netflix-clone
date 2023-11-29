@@ -50,10 +50,16 @@ const ImageSliderSmoothList: React.FC<IImageSliderSmoothList> = ({ chunks, rende
         }
 
         if (action === 'deacrese') {
-            if (Math.round(carousel.currentStep - 0.4) === 0) {
+            if (carousel.currentStep === 0) {
                 setCarousel({
                     status: 'ready',
                     currentStep: carouselMemoState.steps
+                })
+            }
+            else if (Math.round(carousel.currentStep - 0.5) === 0) {
+                setCarousel({
+                    status: 'ready',
+                    currentStep: carousel.currentStep -= carouselMemoState.steps % 1
                 })
             }
             else {

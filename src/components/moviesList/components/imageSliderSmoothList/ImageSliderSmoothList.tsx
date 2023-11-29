@@ -1,8 +1,7 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { AbsoluteBox, FlexContainer } from '../../../mui/MuiStyledComponents';
-import { KeyboardArrowRight, KeyboardArrowLeft } from "@mui/icons-material";
 import _ from 'lodash'
-
+import { ArrowIcon } from "../../../mui/ArrowIcon";
 
 interface IImageSliderSmoothList {
     items: any[]
@@ -89,55 +88,23 @@ const ImageSliderSmoothList: React.FC<IImageSliderSmoothList> = ({ chunks, rende
             <AbsoluteBox
                 onClick={() => handleCaruselSteps('deacrese')}
                 sx={{
-                    position: 'absolute',
-                    top: 0,
                     left: 0,
                     width: '5%',
-                    height: '100%',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    fontSize: '24px',
                 }}
             >
-                <KeyboardArrowLeft sx={{
-                    fontSize: '150px',
-                    color: 'gray',
-                    transition: '0.1s ease',
-                    width: '100%',
-                    height: '100%',
-                    position: 'relative',
-                    '&:active, &:hover': {
-                        transform: `scale(1.3)`,
-
-                    },
-                }} /></AbsoluteBox>
+                <ArrowIcon direction={'left'} />
+            </AbsoluteBox>
             <AbsoluteBox
                 onClick={() => handleCaruselSteps('increase')}
                 sx={{
-                    position: 'absolute',
-                    top: 0,
+
                     right: 0,
                     width: '5%',
-                    height: '100%',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
                 }}
-
-            ><KeyboardArrowRight sx={{
-                fontSize: '150px',
-                color: 'gray',
-                transition: '0.1s ease',
-                width: '100%',
-                height: '100%',
-                position: 'relative',
-                '&:active, &:hover': {
-                    transform: `scale(1.3)`,
-                },
-
-            }} /></AbsoluteBox>
-        </FlexContainer>
+            >
+                <ArrowIcon direction={'right'} />
+            </AbsoluteBox>
+        </FlexContainer >
     )
 }
 

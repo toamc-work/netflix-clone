@@ -19,6 +19,10 @@
     top: 60px;
 }
 
+#navigation-side-menu__dropdown-menu-container > :last-child {
+    border-top: 1px solid white;
+}
+
 #navigation-side-menu__arrow-dropdown-menu {
     color: white;
     width: 1.5rem;

@@ -1,0 +1,37 @@
+#navigation-side-menu__dropdown-menu-wrapper {
+    min-width: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative
+}
+
+#navigation-side-menu__dropdown-menu-container {
+    min-width: fit-content;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: baseline;
+    position: absolute;
+    right: 0;
+    top: 60px;
+}
+
+#navigation-side-menu__arrow-dropdown-menu {
+    color: white;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size:24px; 
+}
+
+#navigation-side-menu__dropdown-menu-icon {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 5px;
+    padding: 16px;
+    background-color: white;
+}

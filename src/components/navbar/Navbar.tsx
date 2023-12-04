@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
                         <NavigationMenu isDesktop={isDesktopView} items={NavbarList} />
                     </FlexBox>
                 </FlexBox>
-                <NavigationSideMenu isDesktop={isDesktopView} items={NavbarSideDropDownMenu} />
+                <NavigationSideMenu items={NavbarSideDropDownMenu} />
             </FlexBox >
         </FlexBox>
     )

@@ -10,6 +10,7 @@ import NetflixLogoSrc from '../../assets/NetflixLogo.svg'
 import { NavbarList } from '../../pages/home/constants/navbarList'
 import NavigationMenu from './components/navigationMenu/NavigationMenu';
 import NavigationSideMenu from "./components/navigationSideMenu/navigationSideMenu";
+import { NavbarSideDropDownMenu } from "../../pages/home/constants/dropDownMenuLists";
 
 const Navbar: React.FC = () => {
     const isDesktopView = useMediaQuery('(min-width: 800px)')
@@ -43,7 +44,7 @@ const Navbar: React.FC = () => {
                         <NavigationMenu isDesktop={isDesktopView} items={NavbarList} />
                     </FlexBox>
                 </FlexBox>
-                <NavigationSideMenu isDesktop={isDesktopView} />
+                <NavigationSideMenu isDesktop={isDesktopView} items={NavbarSideDropDownMenu} />
             </FlexBox >
         </FlexBox>
     )

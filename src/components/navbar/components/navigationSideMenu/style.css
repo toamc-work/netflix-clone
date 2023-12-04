@@ -1,0 +1,31 @@
+#navigation-side-menu-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-width: fit-content;
+    padding: 8px;
+    @media (max-width: 1000px) {
+        padding: 0px;
+    }
+}
+
+#navigation-side-menu-items-wrapper {
+    width: fit-content;
+    min-width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:16px;
+    padding-right: 80px;
+    @media (max-width: 800px) {
+        padding-right: 0px;
+    }
+}
+
+.navigation-side-menu__item-container {
+    width: fit-content;
+    height: 100%;
+    padding: 16px;
+}
